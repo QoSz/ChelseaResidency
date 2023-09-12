@@ -1,0 +1,153 @@
+.navbar-container {
+    position: relative;
+    top: 0;
+    left: 0;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1.3rem 5%;
+    z-index: 100;
+
+    &::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0, 0, 0, .1);
+        backdrop-filter: blur(50px);
+        z-index: -1;
+    }
+}
+
+.logo {
+    text-decoration: none;
+    font-size: 1.5rem;
+    font-weight: 800;
+    color: #fff;
+}
+
+.navbar a {
+    text-decoration: none;
+    color: #fff;
+    font-size: 1.15rem;
+    font-weight: 500;
+    margin-left: 1.5rem;
+}
+
+#toggler-check-box {
+    display: none;
+}
+
+.menu-icon-label {
+    position: absolute;
+    display: none;
+    cursor: pointer;
+    right: 3.5%;
+}
+
+.menu-icon {
+    fill: #fff;
+    width: 2rem;
+    height: 2rem;
+}
+
+#close-icon {
+    display: none;
+}
+
+// BREAK POINTS
+@media screen and (max-width: 1024px) {
+    .navbar-container {
+        padding: 1.3rem 4.5%;
+    }
+
+    .logo {
+        font-size: 1.4rem;
+    }
+
+    .navbar a {
+        font-size: 1.10rem;
+        margin-left: 1.3rem;
+    }
+}
+
+/* Media query for screens between 768px and 992px */
+@media screen and (max-width: 920px) {
+    .navbar-container {
+        padding: 1.3rem 4%;
+    }
+
+    .logo {
+        font-size: 1.3rem;
+    }
+
+    .navbar a {
+        font-size: 1rem;
+        margin-left: 1.2rem;
+    }
+}
+
+@media screen and (max-width: 810px) {
+    .navbar-container {
+        padding: 1.3rem 3.5%;
+    }
+
+    .logo {
+        font-size: 1.25rem;
+    }
+
+    .navbar a {
+        font-size: .95rem;
+        margin-left: 1rem;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    #toggler-check-box:checked ~ .menu-icon-label #menu-icon {
+        display: none;
+    }
+
+    #toggler-check-box:checked ~ .menu-icon-label #close-icon {
+        display: block;
+    }
+
+    .logo {
+        font-size: 1.4rem;
+    }
+
+    .menu-icon-label {
+        display: inline-flex;
+    }
+
+    .navbar {
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 100%;
+        height: 0;
+        background-color: rgba(0, 0, 0, .1);
+        backdrop-filter: blur(50px);
+        box-shadow: 0 .5rem 1rem rgba(0, 0, 0, .1);
+        overflow: hidden;
+        transition: .5s ease;
+    }
+
+    #toggler-check-box:checked ~ .navbar {
+        height: auto;
+    }
+
+    .navbar a {
+        display: block;
+        margin: 1rem 0;
+        text-align: center;
+        transform: translateY(-50px);
+        transition: .3s ease;
+    }
+
+    #toggler-check-box:checked ~ .navbar a {
+        transform: translateY(0);
+    }
+}
