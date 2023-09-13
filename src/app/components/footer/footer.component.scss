@@ -1,0 +1,16 @@
+.copy-right-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 1rem;
+    background: #000000;
+    background: -webkit-linear-gradient(to right, #4c4c4c, #000000);
+    background: linear-gradient(to right, #4c4c4c, #000000);
+    
+}
+
+.copy-right-text {
+    color: #fff;
+    font-size: 0.9rem;
+    font-weight: 500;
+}
